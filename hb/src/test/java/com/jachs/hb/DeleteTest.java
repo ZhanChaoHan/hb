@@ -48,12 +48,14 @@ public class DeleteTest {
         TableName tn=TableName.valueOf ( "jachsTest" );
         Admin admin = connection.getAdmin ();
         
-        admin.disableTable ( tn );
-        admin.deleteTable ( tn );
-        admin.close ();
+        if (admin.tableExists(tn)) {  
+            admin.disableTable(tn);  
+            admin.deleteTable(tn);  
+        }
+        admin.close();
     }
     @Test
-    public  void deletedata(String tableName) throws IOException{
+    public  void deletedata() throws IOException{
         List list = new ArrayList();
         Configuration conf = HBaseConfiguration.create();
         HTable table = new HTable(conf, "jachsTest");

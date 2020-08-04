@@ -67,14 +67,14 @@ public class AddTest {
     @Test
     public void LoopInser () throws IOException{
         TableName tablename = TableName.valueOf ( "jachsTestTR" );
-        for ( int k = 0 ; k < 1000 ; k++ ) {
+        for ( int k = 0 ; k < 10 ; k++ ) {
             Put put = new Put ( ( "id" + k+"我的ID" ).getBytes () );
-            put.addColumn ( "username".getBytes (), "UserName".getBytes (), (k+"username").getBytes () );
-            put.addColumn ( "password".getBytes (), "PassWord".getBytes (), (k+"password").getBytes () );
-            put.addColumn ( "gender".getBytes (), "Gender".getBytes (), (k+"gender").getBytes () );
-            put.addColumn ( "age".getBytes (), "Age".getBytes (), (k+"age").getBytes () );
-            put.addColumn ( "phone".getBytes (), "Phone".getBytes (), (k+"phone").getBytes () );
-            put.addColumn ( "email".getBytes (), "Email".getBytes (), (k+"email").getBytes () );
+            put.addColumn ( "我的名字".getBytes (), "UserName".getBytes (), (k+"username").getBytes () );
+            put.addColumn ( "密码".getBytes (), "PassWord".getBytes (), (k+"password").getBytes () );
+            put.addColumn ( "性别".getBytes (), "Gender".getBytes (), (k+"gender").getBytes () );
+            put.addColumn ( "年龄".getBytes (), "Age".getBytes (), (k+"age").getBytes () );
+            put.addColumn ( "电话".getBytes (), "Phone".getBytes (), (k+"phone").getBytes () );
+            put.addColumn ( "邮箱".getBytes (), "Email".getBytes (), (k+"email").getBytes () );
             Table table = connection.getTable ( tablename );
             table.put ( put );
         }
