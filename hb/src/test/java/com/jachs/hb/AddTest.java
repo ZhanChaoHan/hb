@@ -1,6 +1,3 @@
-/*
- * 创建人: zhanchaohan
- */
 package com.jachs.hb;
 
 import java.io.IOException;
@@ -29,7 +26,7 @@ public class AddTest {
 
     @Before
     public void initHbase () throws IOException {
-        System.setProperty ( "hadoop.home.dir", "F:\\hDriver" );
+//        System.setProperty ( "hadoop.home.dir", "F:\\hDriver" );
         Configuration configuration = HBaseConfiguration.create ();
         //        configuration.set ( "hbase.zookeeper.property.clientPort", "2181" );
         //        configuration.set ( "hbase.zookeeper.quorum", "http://101.200.126.12" );

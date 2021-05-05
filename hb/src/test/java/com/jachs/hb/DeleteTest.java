@@ -1,6 +1,3 @@
-/*
- * 创建人: zhanchaohan
- */
 package com.jachs.hb;
 
 import java.io.IOException;
@@ -20,6 +17,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/***
+ * 
+ * @author zhanchaohan
+ *
+ */
 public class DeleteTest {
     private Connection connection;
 
@@ -54,16 +56,16 @@ public class DeleteTest {
         }
         admin.close();
     }
-    @Test
-    public  void deletedata() throws IOException{
-        List list = new ArrayList();
-        Configuration conf = HBaseConfiguration.create();
-        HTable table = new HTable(conf, "jachsTest");
-        Delete d1 = new Delete("".getBytes());
-        list.add(d1);
-          
-        table.delete(list);  
-        System.out.println("data deleted!");
-    }
+//    @Test
+//    public  void deletedata() throws IOException{
+//        List list = new ArrayList();
+//        Configuration conf = HBaseConfiguration.create();
+//        HTable table = new HTable(conf, "jachsTest");
+//        Delete d1 = new Delete("".getBytes());
+//        list.add(d1);
+//          
+//        table.delete(list);  
+//        System.out.println("data deleted!");
+//    }
 
 }
