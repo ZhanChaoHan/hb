@@ -29,14 +29,30 @@ public class TestTable {
     @Autowired
     private HbaseTableFactory hbaseTableFactory;
 
+    private static final String TABLENAME="people";
+    
+    
+    //全表读取
     @Test
     public void crTble () throws IOException {
-        Table table = hbaseTableFactory.getTable ( TableName.valueOf ( "TraceV2" ) );
+        Table table = hbaseTableFactory.getTable ( TableName.valueOf (TABLENAME) );
         Scan scan = new Scan ();
         ResultScanner rs = table.getScanner ( scan );
         Iterator<Result> ir = rs.iterator ();
         while ( ir.hasNext () ) {
-            System.out.println ( new String ( ir.next ().getRow () ) );
+        	Result result=ir.next ();
+        	
+        	String row=new String(result.getRow());//行key
+        	
+            System.out.println (row);
         }
     }
+    
+    //添加单条数据
+    @Test
+    public void testc() {
+    	hbaseOperations2.put( TableName.valueOf (TABLENAME), "jachsRow".getBytes(), "info".getBytes(), "info:name".getBytes(), "handsome".getBytes());
+    }
+    
+    
 }

@@ -9,8 +9,9 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.jachs</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<description>demo zk</description>
 	<artifactId>pinpoint-commons-hbase</artifactId>
 	<name>pinpoint-commons-hbase</name>
@@ -18,7 +19,8 @@
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
-		<hbase.shaded.client.version>2.1.1</hbase.shaded.client.version>
+		<!-- <hbase.shaded.client.version>2.1.1</hbase.shaded.client.version> -->
+		<hbase.shaded.client.version>1.4.13</hbase.shaded.client.version>
 		<pinpoint.version>2.0.3</pinpoint.version>
 	</properties>
 
@@ -43,7 +45,15 @@
 			<version>${pinpoint.version}</version>
 			<systemPath>${project.basedir}/lib/pinpoint-commons-2.0.3.jar</systemPath>
 		</dependency>
-		 
+		 <dependency>
+			<groupId>com.navercorp.pinpoint</groupId>
+			<artifactId>pinpoint-commons-server</artifactId>
+			<scope>system</scope>
+			<version>${pinpoint.version}</version>
+			<systemPath>${project.basedir}/lib/pinpoint-commons-server-2.0.3.jar</systemPath>
+		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-shaded-client</artifactId>
@@ -63,6 +73,11 @@
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-hdfs</artifactId>
 			<version>2.7.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <scope>provided</scope>
 		</dependency>
 
 	</dependencies>
