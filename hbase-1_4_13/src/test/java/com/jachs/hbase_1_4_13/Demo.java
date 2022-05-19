@@ -15,7 +15,7 @@ import org.junit.Test;
 
 
 /***
- * 
+ * 建表,删表
  * @author zhanchaohan
  *
  */

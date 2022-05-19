@@ -112,6 +112,7 @@ public class Demo2 {
 		hTable.close();
 		System.out.println("插入数据成功");
 	}
+	
 	//添加数据
 	@Test
 	public void test1() throws IOException {
@@ -141,8 +142,8 @@ public class Demo2 {
 		for (int kk = 10; kk < 100; kk++) {
 			String row="row"+kk;
 			
-			addRowData(tableName,row,"info","info:name","zhangsan");
-			addRowData(tableName,row,"info","info:age","18");
+			addRowData(tableName,row,"info","info:name","zhangsan"+kk);
+			addRowData(tableName,row,"info","info:age","18"+kk);
 		}
 	}
 	//删除多条

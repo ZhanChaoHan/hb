@@ -28,7 +28,7 @@ public class HBaseAdminTemplateDemo {
 	
 	@Test
 	public void test1() throws DeserializationException, IOException {
-		HTableDescriptor descriptor =HTableDescriptor.parseFrom("myTestTable".getBytes());
+		HTableDescriptor descriptor =HTableDescriptor.parseFrom("scanTable".getBytes());
 		
 		template.createTable(descriptor);
 	}

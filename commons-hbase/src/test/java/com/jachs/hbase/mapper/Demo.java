@@ -2,6 +2,7 @@ package com.jachs.hbase.mapper;
 
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Scan;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,12 @@ public class Demo {
 		People peo= hbaseOperations2.get(TableName.valueOf (TABLENAME), ROW.getBytes(), new PeopleMapper());
 		
 		System.out.println(peo.toString());
+	 }
+	 @Test
+	 public void tects() {
+		 Scan scan = null;
+		 
+		 hbaseOperations2.find(TableName.valueOf (TABLENAME), scan, null,new PeopleMapper());
+		 
 	 }
 }
