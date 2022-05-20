@@ -1,4 +1,4 @@
-package com.jachs.hbase_1_4_13;
+package com.jachs.hbase_1_4_13.query;
 
 import java.io.IOException;
 
@@ -16,10 +16,13 @@ import org.apache.hadoop.hbase.util.Bytes;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.jachs.hbase_1_4_13.InitDataDemo;
+
 /***
  * 
  * @author zhanchaohan
  * @see InitDataDemo
+ * ------------------------------------------------------
  */
 public class ScanDemo {
 	Configuration conf = HBaseConfiguration.create();
