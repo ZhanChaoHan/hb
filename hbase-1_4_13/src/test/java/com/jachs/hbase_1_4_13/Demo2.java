@@ -124,7 +124,7 @@ public class Demo2 {
 	//查询数据
 	@Test
 	public void test2() throws IOException {
-		String rowKey="tKey02";
+		String rowKey="tKey110";
 		
 		getRow(tableName,rowKey);
 	}
@@ -139,7 +139,7 @@ public class Demo2 {
 	//添加多条
 	@Test
 	public void test11() throws IOException {
-		for (int kk = 10; kk < 100; kk++) {
+		for (int kk = 100; kk < 200; kk++) {
 			String row="row"+kk;
 			
 			addRowData(tableName,row,"info","info:name","zhangsan"+kk);
@@ -149,7 +149,7 @@ public class Demo2 {
 	//删除多条
 	@Test
 	public void test22() throws IOException {
-		for (int kk = 10; kk < 100; kk++) {
+		for (int kk = 100; kk < 200; kk++) {
 			String row="row"+kk;
 			
 			deleteMultiRow(tableName,row);
